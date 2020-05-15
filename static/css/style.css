@@ -26,6 +26,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Jura', sans-serif;
 }
 
+p {
+  font-size: 1.25em;
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -655,7 +659,7 @@ section {
 .services .icon-box {
   text-align: center;
   border: 1px solid #ebebeb;
-  padding: 80px 20px;
+  padding: 40px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
 }
@@ -696,7 +700,7 @@ section {
 
 .services .icon-box p {
   line-height: 24px;
-  font-size: 14px;
+  font-size: 1.25em;
   margin-bottom: 0;
 }
 
