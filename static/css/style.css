@@ -125,11 +125,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo {
+  font-family: 'Courier New';
   font-size: 32px;
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
