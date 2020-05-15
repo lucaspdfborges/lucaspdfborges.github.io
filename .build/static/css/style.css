@@ -27,7 +27,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  font-size: 1.25em;
+  font-size: 1.5em;
+}
+
+/*--------------------------------------------------------------
+# Fonts family
+--------------------------------------------------------------*/
+
+.font-josefin {
+  font-family: 'Josefin Slab', serif;;
+}
+
+.font-courier {
+  font-family: "Courier New";
+}
+
+.font-jura {
+  font-family: 'Jura', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -488,7 +504,7 @@ p {
     height: auto;
   }
   #hero h1 {
-    font-size: 28px;
+    font-size: 4em;
     line-height: 36px;
   }
   #hero h2 {
@@ -546,7 +562,8 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 28px;
-  font-family: 'Josefin Slab', serif;;
+  text-decoration: underline #ffc451;
+  font-family: 'Josefin Slab', serif;
 }
 
 .about .content ul {
@@ -557,6 +574,7 @@ section {
 .about .content ul li {
   padding: 0 0 8px 26px;
   position: relative;
+  font-size: 1.1em;
 }
 
 .about .content ul i {
@@ -629,7 +647,7 @@ section {
 }
 
 .features .icon-box h4 {
-  font-size: 20px;
+  font-size: 1.4em;
   font-weight: 700;
   margin: 5px 0 10px 60px;
 }
@@ -641,7 +659,7 @@ section {
 }
 
 .features .icon-box p {
-  font-size: 15px;
+  font-size: 1.4em;
   color: #848484;
   margin-left: 60px;
 }
