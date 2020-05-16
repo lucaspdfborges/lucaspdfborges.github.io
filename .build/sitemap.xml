@@ -51,6 +51,11 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>/index_includes/project.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
         <loc>/index_includes/sobre.html</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
