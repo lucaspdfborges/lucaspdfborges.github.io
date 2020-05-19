@@ -16,6 +16,16 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>/describe.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>/keep-up.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
         <loc>/index_includes/servicos.html</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>

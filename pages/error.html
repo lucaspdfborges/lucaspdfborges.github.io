@@ -1,26 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block body %}
-<div class="jumbotron">
-  <div class="container">
-    <h1>We're sorry!</h1>
-    <p>The page <b id="url"></b> could not be found on this server.</p>
+
+{% block main %}
+<section>
+  <h1 class="text-center">Error 404 - Not Found</h1>
+  <div class="d-flex justify-content-center">
+    <img src="{% static 'static/img/404.svg' %}" class="img-fluid  mx-5" alt="">
   </div>
-</div>
-{% endblock body %}
-
-{% block scripts %}
-  <script type="text/javascript" charset="utf-8">
-    $(document).ready(function() {
-
-      // Add the missing url to the text
-      $("#url").text(window.location.pathname);
-
-      // Fix the css locations dynamically
-      $("head link").each(function() {
-        for (var i=0; i<window.location.pathname.split(/\//g).length-2; i++)
-          $(this).attr("href", "../" + $(this).attr("href"));
-      });
-    })
-  </script>
-{% endblock %}
+</section>
+{% endblock main %}
