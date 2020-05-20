@@ -1,0 +1,26 @@
+label.label-box {
+    border: 1px solid #b9b9b9;
+    height: 1.25em;
+    width: 1.25em;
+}
+
+label.label-box i {
+    opacity: 0;
+    color: #ffc451;
+}
+
+ input:checked + label.label-box  {
+    border-color: #ffc451;
+ }
+
+ input:checked + label.label-box i{
+    opacity: 1;
+ }
+
+ .g-recaptcha div{
+     width: auto !important; 
+ }
+
+ #rc-anchor-container {
+    border: 1px solid #ffc451 !important;
+}

@@ -1,0 +1,254 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link href="{% static 'static/css/custom_form.css' %}" rel="stylesheet">
+{% endblock css %}
+
+{% block nav_ul %}
+  <li class="mx-3"><a href="#new-project">Novo Projeto</a></li>
+  <li class="mx-3"><a href="#keep-up">Acompanhar Projeto</a></li>
+{% endblock nav_ul %}
+
+
+{% block main %}
+
+<section id="new-project" >
+    <form action="?" method="POST">
+
+    <div class="container mb-5 pb-5">
+
+    <div class="d-flex justify-content-center my-5 py-5">
+        <div id="title">
+            <h1>Novo Projeto<span>.</span></h1>
+            <h2>Descreva suas ideias e produtos que deseja para já iniciarmos</h2>
+        </div>
+    </div>
+
+    <div class="row align-items-center justify-content-between mt-5 pt-5">
+        <div class="col-lg-4">
+
+            <!-- CHECK BOXES -->
+
+            <h3 class='font-josefin'>Quais produtos deseja ?</h3>
+
+            <!-- Site Comercial -->
+            <div class="form-check">
+                <input class="d-none form-check-input bg-warning" type="checkbox"  id="checkbox-comercial" value="comercial">
+                <label for="checkbox-comercial" class="label-box text-center rounded">
+                    <i class='bx bx-check-double m-0 p-0'></i>
+                </label>
+                <label class="label-text text-center font-jura" for="checkbox-comercial">
+                    Site Comercial
+                </label>
+            </div>
+
+             <!-- Site Personalizado -->
+             <div class="form-check">
+                <input class="d-none form-check-input bg-warning" type="checkbox"  id="checkbox-personalizado" value="personalizado">
+                <label for="checkbox-personalizado" class="label-box text-center rounded">
+                    <i class='bx bx-check-double m-0 p-0'></i>
+                </label>
+                <label class="label-text text-center font-jura" for="checkbox-personalizado">
+                    Site Personalizado
+                </label>
+            </div>
+
+            <!-- Blog -->
+            <div class="form-check">
+                <input class="d-none form-check-input bg-warning" type="checkbox"  id="checkbox-blog" value="blog">
+                <label for="checkbox-blog" class="label-box text-center rounded">
+                    <i class='bx bx-check-double m-0 p-0'></i>
+                </label>
+                <label class="label-text text-center font-jura " for="checkbox-blog">
+                    Blog
+                </label>
+            </div>
+        
+
+            <!-- Web Charts -->
+            <div class="form-check">
+                <input class="d-none form-check-input bg-warning" type="checkbox"  id="checkbox-webcharts" value="webcharts">
+                <label for="checkbox-webcharts" class="label-box text-center rounded">
+                    <i class='bx bx-check-double m-0 p-0'></i>
+                </label>
+                <label class="label-text text-center font-jura" for="checkbox-webcharts">
+                    Web Charts
+                </label>
+            </div>
+
+            <!-- API -->
+            <div class="form-check">
+                <input class="d-none form-check-input bg-warning" type="checkbox"  id="checkbox-api" value="api">
+                <label for="checkbox-api" class="label-box text-center rounded">
+                    <i class='bx bx-check-double m-0 p-0'></i>
+                </label>
+                <label class="label-text text-center font-jura" for="checkbox-api">
+                    API
+                </label>
+            </div>
+
+            <!-- Outros -->
+            <div class="form-check">
+                <input class="d-none form-check-input bg-warning" type="checkbox"  id="checkbox-outros" value="api">
+                <label for="checkbox-outros" class="label-box text-center rounded">
+                    <i class='bx bx-check-double m-0 p-0'></i>
+                </label>
+                <label class="label-text text-center font-jura" for="checkbox-outros">
+                    Outros
+                </label>
+            </div>
+            
+        </div>
+        <div class="col-lg-6 mr-5">
+            <img src="{% static 'static/img/panels.svg' %}" class="img-fluid" alt="">
+        </div>
+    </div>
+
+    <div class="row align-items-center justify-content-between">
+        <div class="col-lg-4">
+            <img src="{% static 'static/img/func.svg' %}" class="img-fluid p-5 mr-5 mt-5" alt="">
+        </div>
+
+        <div class="col-lg-8">
+            <!-- Descrição -->
+
+            <h3 class='font-josefin text-center mb-4'>Descreva as funcionalidades que deseja em seu produto</h3>
+            <!-- Text Area -->
+            <textarea name="" id="project-description" class="form-control mx-4" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+
+    <div class="row align-items-center justify-content-between">
+
+        <div class="col-lg-6">
+            <!-- Nome -->
+
+            <h3 class='font-josefin text-center pl-5 ml-5 mb-4'>Informações de contato</h3>
+
+            <div class="d-flex aling-items-center justify-content-between my-2">
+                <label for="contact-name" class="font-jura my-1  w-25">Nome</label>
+                <input id="contact-name" class="form-control mx-2 text-center" placeholder="Nome ou pseudônimo" type="text">
+            </div>
+
+            <div class="d-flex aling-items-center justify-content-between my-2">
+                <label for="contact-email" class="font-jura my-1 w-25">E-mail</label>
+                <input id="contact-email" class="form-control mx-2 text-center" placeholder="E-mail" type="text">
+            </div>
+
+            <div class="d-flex aling-items-center justify-content-between my-2">
+                <label for="contact-email" class="font-jura my-1 w-25">Pagamento</label>
+                <div class="d-flex justify-content-center flex-wrap pr-5 mx-2 mt-2">
+                    <!-- Bitcoin -->
+                    <div class="form-check">
+                        <input class="d-none form-check-input bg-warning" name="payment" type="radio"  id="checkbox-bitcoin" value="bitcoin">
+                        <label for="checkbox-bitcoin" class="label-box text-center rounded-circle">
+                            <i class='bx bxl-bitcoin m-0 p-0'></i>
+                        </label>
+                        <label class="label-text text-center font-josefin" for="checkbox-bitcoin">
+                            Bitcoin
+                        </label>
+                    </div>
+
+                    <!-- PayPal -->
+                    <div class="form-check">
+                        <input class="d-none form-check-input bg-warning" name="payment" type="radio"  id="checkbox-paypal" value="paypal">
+                        <label for="checkbox-paypal" class="label-box text-center rounded-circle">
+                            <i class='bx bxs-dollar-circle m-0 p-0'></i>
+                        </label>
+                        <label class="label-text text-center font-josefin" for="checkbox-paypal">
+                            PayPal
+                        </label>
+                    </div>
+
+                     <!-- Cash -->
+                     <div class="form-check">
+                        <input class="d-none form-check-input bg-warning" name="payment" type="radio"  id="checkbox-cash" value="cash">
+                        <label for="checkbox-cash" class="label-box text-center rounded-circle">
+                            <i class='bx bxs-dollar-circle m-0 p-0'></i>
+                        </label>
+                        <label class="label-text text-center font-josefin" for="checkbox-cash">
+                            Dinheiro
+                        </label>
+                    </div>
+
+                     <!-- Transfer -->
+                     <div class="form-check">
+                        <input class="d-none form-check-input bg-warning" name="payment" type="radio"  id="checkbox-transfer" value="transfer">
+                        <label for="checkbox-transfer" class="label-box text-center rounded-circle">
+                            <i class='bx bxs-dollar-circle m-0 p-0'></i>
+                        </label>
+                        <label class="label-text text-center font-josefin" for="checkbox-transfer">
+                            Transferência
+                        </label>
+                    </div>
+
+                     <!-- Boleto -->
+                     <div class="form-check">
+                        <input class="d-none form-check-input bg-warning" name="payment" type="radio"  id="checkbox-boleto" value="boleto">
+                        <label for="checkbox-boleto" class="label-box text-center rounded-circle">
+                            <i class='bx bxs-dollar-circle m-0 p-0'></i>
+                        </label>
+                        <label class="label-text text-center font-josefin" for="checkbox-boleto">
+                            Boleto
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="col-lg-6">
+            <img src="{% static 'static/img/rects.svg' %}" class="img-fluid p-5 mr-5 mt-5" alt="">
+        </div>
+       
+    </div>
+
+                
+    <div class="row align-items-center justify-content-between">
+        <div class="col-lg-6">
+            <img src="{% static 'static/img/deal.svg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 text-center">
+            <div class="g-recaptcha font-jura" data-sitekey="your_site_key" style="width: auto;"></div>
+            <input type="submit" class="btn btn-lg btn-warning px-5 my-3" value="Submeter Proposta">
+        </div>
+    </div>
+
+    </div>
+</div>
+
+</form>
+</section>
+
+
+<section id="keep-up" class="mb-5" style="min-height:100vh; background:#e1e1e12f;">
+    <div class="container mb-5">
+
+
+    <h2 class="text-center font-jura mx-3 mb-3" style="text-decoration: underline #ffc451;">Já tem um projeto em desenvolvimento ?</h2>
+
+    <p class="text-center font-josefin mb-5 pb-5">Acompanhe o projeto inserindo sua chave de acesso</p>
+
+    <div class="row align-items-center justify-content-between my-5 rounded border">
+        <div class="col-lg-8">
+            <h3 class="text-center font-josefin mt-5 mb-4">Chave de acesso</h3>
+            <div class="input-group mb-5 px-md-4 pb-5">
+                <div class="input-group-prepend">
+                    <button class="btn btn-warning" type="button">Acessar</button>
+                </div>
+                <input type="text" class="form-control text-center border-warning"  placeholder="chave de acesso" required>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <img src="{% static 'static/img/program.svg' %}" class="d-none d-lg-block img-fluid my-5 px-lg-5" alt="">
+        </div>
+    </div>
+    
+
+    </div>
+</section>
+{% endblock main %}
+
+

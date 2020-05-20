@@ -30,6 +30,10 @@
 
   <!-- Template Main CSS File -->
   <link href="static/css/style.css" rel="stylesheet">
+
+
+  <!-- Captcha -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
   
   
@@ -55,7 +59,11 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           
-          
+
+  <li class="mx-3"><a href="#keep-up">Acompanhar Projeto</a></li>
+  <li class="mx-3"><a href="#new-project">Novo Projeto</a></li>
+
+
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -73,7 +81,7 @@
 <section id="keep-up" class="mb-5" style="min-height:100vh;">
     <div class="container mb-5">
 
-    <div class="d-flex justify-content-center my-5 pb-5">
+    <div class="d-flex justify-content-center my-5 py-5">
         <div id="title">
             <h1>Projeto<span>.</span></h1>
             <h2>Acompanhe inserindo a chave de acesso</h2>
@@ -84,15 +92,15 @@
     <div class="row align-items-center justify-content-between my-5 rounded border">
         <div class="col-lg-8">
             <h3 class="text-center font-josefin mt-5 mb-4">Chave de acesso</h3>
-            <div class="input-group mb-5 px-4">
+            <div class="input-group mb-5 px-md-4 pb-5">
                 <div class="input-group-prepend">
                     <button class="btn btn-warning" type="button">Acessar</button>
                 </div>
-                <input type="text" class="form-control text-center"  placeholder="chave de acesso" required>
+                <input type="text" class="form-control text-center border-warning"  placeholder="chave de acesso" required>
             </div>
         </div>
         <div class="col-lg-4">
-            <img src="static/img/program.svg" class="img-fluid my-5 px-lg-5" alt="">
+            <img src="static/img/program.svg" class="d-none d-lg-block img-fluid my-5 px-lg-5" alt="">
         </div>
     </div>
     
@@ -100,7 +108,7 @@
     </div>
 </section>
 
-<section id="project" style="background:#e1e1e12f;">
+<section id="new-project" style="background:#e1e1e12f;">
     <div class="container mb-5 pb-5">
 
     <h2 class="text-center font-jura mx-3 mb-5" style="text-decoration: underline #ffc451;">Teve uma ideia de um novo projeto ?</h2>
@@ -111,7 +119,7 @@
         </div>
         <div class="col-lg-6 text-center">
             <p class="font-josefin mx-3">Descreva suas ideias e produtos que deseja, para nossa equipe já iniciar os trabalhos</p>
-            <a href="#" class="btn btn-lg btn-warning my-3">Descrever projeto</a>
+            <a href="/new-project.html" class="btn btn-lg btn-warning my-3">Descrever projeto</a>
         </div>
       </div>
     </div>
@@ -183,6 +191,16 @@
     </div>
 
     <div class="container">
+
+      <!-- Bitcoin accepted here  -->
+      <div class="d-flex justify-content-center align-items-start mr-5 mt-4">
+        <i class='bx bxl-bitcoin display-4'></i> 
+        <div>
+          <h2 class="font-jura text-right m-0">Bitcoin</h2>
+          <span>accepted here</span>
+        </div>
+      </div>
+
       <div class="copyright">
         &copy; Copyright <strong><span>LL</span></strong>. All Rights Reserved
       </div>

@@ -690,6 +690,18 @@ section {
   min-height: 400px;
 }
 
+
+/*--------------------------------------------------------------
+# New Project
+--------------------------------------------------------------*/
+
+#new-project h3 {
+    font-weight: 700;
+    font-size: 28px;
+    text-decoration: underline #ffc451;
+    font-family: 'Josefin Slab', serif;
+}
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
@@ -1619,7 +1631,7 @@ section {
 
 #footer .copyright {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 15px;
 }
 
 #footer .credits {
@@ -1627,4 +1639,9 @@ section {
   text-align: center;
   font-size: 13px;
   color: #fff;
+}
+
+
+#footer i {
+  color: #ffc451;
 }
