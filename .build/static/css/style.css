@@ -702,6 +702,13 @@ section {
     font-family: 'Josefin Slab', serif;
 }
 
+#submit-new-project {
+  font-weight: 700;
+  font-size: 24px;
+  color: #151515;
+  font-family: 'Josefin Slab', serif;
+}
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
