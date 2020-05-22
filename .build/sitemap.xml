@@ -31,32 +31,7 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>/index_includes/contato.html</loc>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>/index_includes/testimonials.html</loc>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
         <loc>/index_includes/payment.html</loc>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>/index_includes/time.html</loc>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>/index_includes/clientes.html</loc>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>/index_includes/qualificacoes.html</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>

@@ -91,7 +91,7 @@
 
     <div class="row align-items-center justify-content-center">
         <div class="col-lg-8">
-            <img src="static/img/city.svg" class="img-fluid" alt="">
+            <img src="static/img/svg/city.svg" class="img-fluid" alt="">
         </div>
     </div>
 
@@ -219,7 +219,7 @@
 </section>
 
 
-<section id="keep-up" style="min-height:100vh; background:#e1e1e12f;">
+<section id="keep-up" style="background:#e1e1e130;">
     <div class="container mb-5">
 
 
@@ -238,7 +238,7 @@
             </div>
         </div>
         <div class="col-lg-4">
-            <img src="static/img/program.svg" class="d-none d-lg-block img-fluid my-5 px-lg-5" alt="">
+            <img src="static/img/svg/program.svg" class="d-none d-lg-block img-fluid my-5 px-lg-5" alt="">
         </div>
     </div>
     </div>
@@ -397,7 +397,7 @@
                 data: data_form, // serializes the form's elements.
                 success: function(response){
                         if(response.message_status=='sent'){
-                            $("#modal-img").attr('src', 'static/img/letter.svg' );
+                            $("#modal-img").attr('src', 'static/img/svg/letter.svg' );
                             $("#modal-text").html('Proposta enviada !');
                             $('#modal').modal('show');
                         }
