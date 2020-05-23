@@ -36,6 +36,7 @@
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   
   
+<link href="static/css/custom_form.css" rel="stylesheet">
 <link href="static/css/project.css" rel="stylesheet">
 
 
@@ -109,8 +110,11 @@
       </div>
 
       <div class="col-lg-7">
-        <h5 class="font-josefin">Paletas pré-definiaos:</h5>
-        <div id="color-palettes" class="d-flex flex-wrap"></div>
+        <div class="d-flex justify-content-between">
+          <h5 class="font-josefin">Paletas pré-definidas:</h5> 
+          <span class="font-jura text-secondary mx-4"><small>clique nas paletas abaixo para escolher as cores</small></span>
+        </div>
+        <div id="color-palettes" class="d-flex flex-wrap p-3"></div>
         <div class="d-flex justify-content-center align-items-center mt-4 mb-3">
           <hr class="w-100 border-top"> 
         </div>
@@ -149,14 +153,65 @@
 
 <section id="colors-use">
   <div class="container">
-    <div class="row align-items-center justify-content-between">
+    <div class="row align-items-center justify-content-center">
       <div class="col-lg-12 mb-4">
         <h3 class="text-left yellow-underline font-josefin my-3">Uso das Cores</h3>
       </div>
 
-      <div class="col-lg-4" id="screen-svg-div">
-        <!-- <img src="static/img/svg/screen.svg" class="img-fluid" alt=""> -->
+      <div class="col-lg-6" id="screen-svg-div"> </div>
+
+      <div class="col-lg-4">
+        <!-- tema claro -->
+        <div class="form-check">
+          <input class="dark-or-light form-check-input bg-warning opacity-0" type="radio" name="dark-or-light" oninvalid="this.setCustomValidity('Selecione uma opção')" oninput="setCustomValidity('')"  id="light-theme" value="light" checked>
+          <label for="light-theme" class="label-box text-center rounded">
+              <i class='bx bx-check-double m-0 p-0'></i>
+          </label>
+          <label class="label-text text-center font-jura" for="light-theme">
+              <b>Tema claro</b>: favorecer cores claras
+          </label>
+        </div>
+
+        <!-- tema escuro  -->
+        <div class="form-check">
+          <input class="dark-or-light form-check-input bg-warning opacity-0" type="radio" name="dark-or-light" oninvalid="this.setCustomValidity('Selecione uma opção')" oninput="setCustomValidity('')"  id="dark-theme" value="light" required>
+          <label for="dark-theme" class="label-box text-center rounded">
+              <i class='bx bx-check-double m-0 p-0'></i>
+          </label>
+          <label class="label-text text-center font-jura" for="dark-theme">
+              <b>Tema escuro</b>: favorecer cores escuras
+          </label>
+        </div>
+
+        <hr class="w-100 border-top">
+
+        <!-- branco  -->
+        <div class="form-check">
+          <input class="dark-or-light form-check-input bg-warning opacity-0" type="checkbox" name="whited" oninvalid="this.setCustomValidity('Selecione uma opção')" oninput="setCustomValidity('')"  id="whited" value="whited" checked>
+          <label for="whited" class="label-box text-center rounded">
+              <i class='bx bx-check-double m-0 p-0'></i>
+          </label>
+          <label class="label-text text-center font-jura" for="whited">
+            <b>Manter cor branca</b> : cor auxiliar neutra
+          </label>
+        </div>
+
       </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="text-fonts">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-12 mb-4">
+        <h3 class="text-left yellow-underline font-josefin my-3">Fontes de texto</h3>
+      </div>
+
+      <p class="font-josefin text-secondary">Escolha de duas a quatro famílias de fontes de texto</p>
+
+
 
     </div>
   </div>
@@ -318,20 +373,27 @@
     setColors(palette);
   });
 
+
+
   // Customise squares
   $('.input-color').change(function(){
       $(`#${$(this).attr('name')}`).css('background-color',$(this).val());
       $(`#${$(this).attr('id') } + label`).css("background-color",$(this).val());      
       $(this).attr("value", $(this).val()); 
+      $("#color-palette-name").html('palete customizado');
 
-      var pltt = [];
-      $('.input-color').each(function(index){
-        pltt.push($(this).attr("value"));
-      });
+      updateColorUse();
+  });
 
-      var screen_svg = getScreenSVG(pltt[0], pltt[1], pltt[2], pltt[3], "#ffffff");
-      $("#screen-svg").remove();
-      $("#screen-svg-div").append(screen_svg);
+  // Change theme to dark or light
+  $('.dark-or-light').change(function(){
+    updateColorUse();
+  });
+
+  // White background on theme
+
+  $('#whited').change(function(){
+    updateColorUse();
   });
 
 
