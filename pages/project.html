@@ -4,6 +4,7 @@
 {% block css %}
 <link href="{% static 'static/css/custom_form.css' %}" rel="stylesheet">
 <link href="{% static 'static/css/project.css' %}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Barlow+Condensed:wght@300&family=Baskervville&family=Beth+Ellen&family=Bungee+Inline&family=Cinzel&family=Cormorant+Infant&family=Dancing+Script&family=Fredericka+the+Great&family=IM+Fell+English+SC&family=Jua&family=Julius+Sans+One&family=Jura:wght@300&family=Kelly+Slab&family=Lekton&family=Londrina+Shadow&family=Monoton&family=Nixie+One&family=Pacifico&family=Poiret+One&family=Press+Start+2P&family=Quantico&family=Rajdhani:wght@300&family=Raleway:wght@300&family=Rubik+Mono+One&family=Rye&family=Sacramento&family=Sarpanch&family=Wire+One&display=swap" rel="stylesheet">
 {% endblock css %}
 
 {% block nav_ul %}
@@ -137,6 +138,24 @@
   </div>
 </section>
 
+<section id="templates">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-12 mb-4">
+        <h3 class="text-left yellow-underline font-josefin my-3">Templates</h3>
+      </div>
+
+      <div class="d-flex w-100 align-items-center">
+        <span class="font-josefin text-nowrap mx-3 mb-0">ESCOLHA UM MODELO DE TEMPLATE</span>
+        <hr class="w-25 border-top border-warning m-0">
+      </div>
+
+      <div id="templates-div" class="row justify-content-center my-4"> </div>
+
+    </div>
+  </div>
+</section>
+
 <section id="text-fonts">
   <div class="container">
     <div class="row align-items-center justify-content-center">
@@ -144,9 +163,17 @@
         <h3 class="text-left yellow-underline font-josefin my-3">Fontes de texto</h3>
       </div>
 
-      <p class="font-josefin text-secondary">Escolha de duas a quatro famílias de fontes de texto</p>
+      <div class="d-flex w-100 align-items-center">
+        <span class="font-josefin text-nowrap mx-3 mb-0">ESCOLHA DE DUAS A CINCO FAMÍLIAS DE FONTES</span>
+        <hr class="w-25 border-top border-warning m-0">
+      </div>
 
+      <div id="font-family-div" class="d-flex flex-wrap my-5"> </div>
 
+      <div class="d-flex justify-content-end w-100 align-items-center">
+        <hr class="w-25 border-top border-warning m-0">
+        <span class="font-josefin text-secondary text-nowrap mx-3">QUER MAIS FONTES ? PROCURE EM <a target="_blank" rel="noopener noreferrer" href="https://fonts.google.com/">GOOGLE FONTS</a></span>
+      </div>
 
     </div>
   </div>
@@ -163,6 +190,7 @@
     </div>
     <p class="font-josefin text-center m-0"> R$ 100</p>
   </div>
+
   
 {% endblock main %}
 
@@ -223,6 +251,71 @@
   $('#whited').change(function(){
     updateColorUse();
   });
+
+
+  // Font family collection
+
+  font_family_collection.forEach(function(font, index){
+
+    // font name input and label-div
+    var font_div= `<div id="font-div-${index}"></div>`;
+    $("#font-family-div").append(font_div);
+
+    var font_input = `<input class="form-check-input bg-warning opacity-0" type="checkbox" name="font-family" id="font-family-${index}" value="${font.name}">`;
+    
+    var font_label = `<label for="font-family-${index}" class="font-family font-div rounded px-3 m-2" id="font-family-label-${index}"></label>`;
+
+    $(`#font-div-${index}`).append(font_input);
+    $(`#font-div-${index}`).append(font_label);
+
+    // font name and text
+    var font_name = `<span class="font-jura text-secondary"><small>${font.name}</small></span>`;
+    var font_text = `<p style="${font.css}">LucLog - codificando suas ideias</p>`;
+
+    $(`#font-family-label-${index}`).append(font_name);
+    $(`#font-family-label-${index}`).append(font_text);
+  });
+
+
+  // SITE TEMPLATES
+
+  site_templates.forEach(function(template, index){
+   
+    // template div
+    var template_div = `<div id="template-${index}" class="template-div col-lg-3 col-md-5 m-4"></div>`; 
+    $("#templates-div").append(template_div);
+
+     // template input
+     var template_input = `<div class="form-check pl-0 pt-2"> <input class="form-check-input bg-warning opacity-0 template-input" number="${index}" type="radio" name="template"  id="template-input-${index}" value="${template}"> <label for="template-input-${index}" class="label-box text-center mb-0"> <i class='bx bx-check-double m-0 p-0'></i> </label> <label class="label-text text-center font-josefin text-secondary mb-0" for="template-input-${index}"> ${template.toUpperCase()} </label> </div>`;
+
+      $(`#template-${index}`).append(template_input);
+      $(`#template-${index}`).append(`<hr id="template-hr-${index}" class="template-hr w-100 mt-1 mb-3">`);
+
+    // template image
+    var template_img = `<a target="_blank" rel="noopener noreferrer" href="https://bootstrapmade.com/demo/themes/${template}/"><img src="https://bootstrapmade.com/wp-content/themefiles/${template}/400.png" class="img-fluid mb-3" alt=""></a>`;
+
+    $(`#template-${index}`).append(template_img);
+  });
+
+
+  // change shadow of template div to yellow
+  $('.template-input').change(function(){
+
+    $('.template-div').each(function(){
+      $(this).css('border', '1px solid white');
+      $(this).css('box-shadow', 'none');
+    });
+
+    $('.template-hr').each(function(){
+      $(this).css('border-top', '1px solid #dee2e6');
+    });
+
+    if($(this).is(':checked')){
+      $(`#template-hr-${$(this).attr('number')}`).css('border-top', '1px solid #ffc451');
+       $(`#template-${$(this).attr('number')}`).css('border', '1px solid #ffc451');
+       $(`#template-${$(this).attr('number')}`).css('box-shadow', '0em .25rem 0.25rem rgba(0,0,0,.3)');
+    }
+  })
 
 
 </script>

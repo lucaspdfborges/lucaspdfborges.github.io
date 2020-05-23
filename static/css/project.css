@@ -55,6 +55,23 @@
     box-shadow: 0em .1rem 0.1rem rgba(0,0,0,.5)!important;
 }
 
+.template-div {
+
+    border: 1px solid white;
+
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+}
+
+.template-div:hover {
+    box-shadow: 0em .25rem 0.25rem rgba(0,0,0,.3);
+}
+
+.template-div:active {
+    box-shadow: 0em .1rem 0.1rem rgba(0,0,0,.5);
+}
 
 .input-color {
     opacity: 0;
@@ -82,3 +99,41 @@
 .input-color + label:active{
     box-shadow: 0em .1rem 0.1rem rgba(0,0,0,.5)!important;
 }
+
+
+.font-div{
+    box-shadow: 0 .25rem .25rem rgba(0,0,0,.075)!important;
+
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+}
+
+label.font-family  small {
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+}
+
+.font-div:hover{
+    box-shadow: 0 .125rem .2rem rgba(0,0,0,.2)!important;
+}
+
+.font-div:active{
+    box-shadow: 0 .1rem .1rem rgba(0,0,0,.075)!important;
+    background-color: #ffc451;
+}
+
+input:checked + label.font-family  {
+    background-color: #ffc451;
+ }
+
+ input:checked + label.font-family  small {
+    color:white !important;
+ }
+
+ .template-hr {
+     border-top: 1px solid #dee2e6;
+ }
