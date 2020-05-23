@@ -321,14 +321,15 @@
   // Customise squares
   $('.input-color').change(function(){
       $(`#${$(this).attr('name')}`).css('background-color',$(this).val());
-      $(`#${$(this).attr('id') } + label`).css("background-color",$(this).val());
+      $(`#${$(this).attr('id') } + label`).css("background-color",$(this).val());      
+      $(this).attr("value", $(this).val()); 
 
       var pltt = [];
-      $('.input-color + label').each(function(index){
-        pltt.push($(this).css("background-color"));
+      $('.input-color').each(function(index){
+        pltt.push($(this).attr("value"));
       });
 
-      var screen_svg = getScreenSVG(rgb2hex(pltt[0]), rgb2hex(pltt[1]),rgb2hex(pltt[2]), rgb2hex(pltt[3]), "#ffffff");
+      var screen_svg = getScreenSVG(pltt[0], pltt[1], pltt[2], pltt[3], "#ffffff");
       $("#screen-svg").remove();
       $("#screen-svg-div").append(screen_svg);
   });
