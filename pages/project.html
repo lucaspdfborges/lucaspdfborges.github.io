@@ -13,23 +13,21 @@
 
 
 {% block main %}
-<section id="keep-up" class="mb-5" style="min-height:100vh;">
-    <div class="container mb-5">
-
+<section id="keep-up-title" class="mt-5">
     <div class="d-flex justify-content-center my-5 py-5">
         <div id="title">
             <h1>Projeto<span>.</span></h1>
             <h2>decida o design e os requisitos</h2>
         </div>
     </div>
+</section>
 
-
-    <div class="row align-items-center justify-content-between my-5">
+<section id="palette">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
       <div class="col-lg-12 mb-4">
-        <h3 class="text-left yellow-underline font-josefin my-3">Palette de Cores</h3>
+        <h3 class="text-left yellow-underline font-josefin my-3">Paleta de Cores</h3>
       </div>
-
-      <!-- advise https://colorhunt.co/ -->
 
       <div class="col-lg-4">
         <h5 class="font-josefin text-secondary w-100 text-center mb-0" id="color-palette-name">freedom colors</h5>
@@ -42,25 +40,26 @@
       </div>
 
       <div class="col-lg-1 h-100">
-        <hr style="width:1px; height: 21em;" class="border-left">
+        <hr style="width:1px; height: 22em;" class="border-left">
       </div>
 
       <div class="col-lg-7">
-        <h5 class="font-josefin">Palettes pré-definidos:</h5>
+        <h5 class="font-josefin">Paletas pré-definiaos:</h5>
         <div id="color-palettes" class="d-flex flex-wrap"></div>
-        <div class="d-flex justify-content-center align-items-center my-4">
+        <div class="d-flex justify-content-center align-items-center mt-4 mb-3">
           <hr class="w-100 border-top"> 
         </div>
+
         <div class="d-flex align-items-center">
-          <h5 class="font-josefin">Customizar palette:</h5>
+          <h5 class="font-josefin mb-0">Customizar paleta:</h5>
 
-          <!-- color #1 -->
-          <input class="input-color" type="color" id="custom-color-1" name="color-1">
-          <label for="custom-color-1"></label>
+            <!-- color #1 -->
+            <input class="input-color" type="color" id="custom-color-1" name="color-1">
+            <label for="custom-color-1"></label>
 
-          <!-- color #2 -->
-          <input class="input-color" type="color" id="custom-color-2" name="color-2">
-          <label for="custom-color-2"></label>
+            <!-- color #2 -->
+            <input class="input-color" type="color" id="custom-color-2" name="color-2">
+            <label for="custom-color-2"></label>
 
             <!-- color #3 -->
             <input class="input-color" type="color" id="custom-color-3" name="color-3">
@@ -69,44 +68,37 @@
             <!-- color #4 -->
             <input class="input-color" type="color" id="custom-color-4" name="color-4">
             <label for="custom-color-4"></label>
+
+            <!-- sugestoes -->
+
+          <div class="ml-5" style="line-height: 1;">
+            <span class="font-jura text-secondary mb-0"> <small> Clique nos quadrados para alterar a cor </small> </span> <br>
+            <span class="font-jura text-secondary mb-0"> <small> Acesse <a target="_blank" rel="noopener noreferrer" href="https://colorhunt.co/">Color Hunt</a> para se inspirar</small> </span>
+          </div>
+
         </div>
       </div>
-
     </div>
-
-    <div class="row align-items-center justify-content-between my-5 rounded border">
-      <div class="col-lg-4">
-          <h3 class="text-center font-josefin my-3">Palette de Cores</h3>
-      </div>
-      <div class="col-lg-4">
-          <h3 class="text-center font-josefin my-3">Família de Fontes</h3>
-      </div>
-      <div class="col-lg-4">
-          <h3 class="text-center font-josefin my-3">Tema de Design</h3>
-      </div>
-  </div>
-    
-
     </div>
 </section>
 
-<section id="new-project" style="background:#e1e1e130;">
-    <div class="container mb-5 pb-5">
-
-    <h2 class="text-center font-jura mx-3 mb-5" style="text-decoration: underline #ffc451;">Teve uma ideia de um novo projeto ?</h2>
-
-      <div class="row align-items-center justify-content-between mt-5 pt-5">
-        <div class="col-lg-6">
-          <img src="{% static 'static/img/svg/deal.svg' %}" class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-6 text-center">
-            <p class="font-josefin mx-3">Descreva suas ideias e produtos que deseja, para nossa equipe já iniciar os trabalhos</p>
-            <a href="/new-project.html" class="btn btn-lg btn-warning my-3">Descrever projeto</a>
-        </div>
+<section id="colors-use">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-lg-12 mb-4">
+        <h3 class="text-left yellow-underline font-josefin my-3">Uso das Cores</h3>
       </div>
-    </div>
-  </section>
 
+      <div class="col-lg-4" id="screen-svg-div">
+        <!-- <img src="{% static 'static/img/svg/screen.svg' %}" class="img-fluid" alt=""> -->
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Price  div  -->
   <div class="total-cost bg-warning rounded shadow-sm p-2">
     <h4 class="font-courier text-center m-0">Total</h4>
     <div class="d-flex align-items-center">
@@ -146,15 +138,29 @@
     var color_palette_name = $(this).attr('name')
     $("#color-palette-name").html(color_palette_name);
 
-    var palette_json = color_palette.filter(x => x.name==color_palette_name)[0];
+    var palette_json = color_palette.filter(function(x){
+      return x.name==color_palette_name
+    })[0];
     var palette = palette_json.colors;
 
     setColors(palette);
   });
 
+  // Customise squares
   $('.input-color').change(function(){
       $(`#${$(this).attr('name')}`).css('background-color',$(this).val());
+      $(`#${$(this).attr('id') } + label`).css("background-color",$(this).val());
+
+      var pltt = [];
+      $('.input-color + label').each(function(index){
+        pltt.push($(this).css("background-color"));
+      });
+
+      var screen_svg = getScreenSVG(rgb2hex(pltt[0]), rgb2hex(pltt[1]),rgb2hex(pltt[2]), rgb2hex(pltt[3]), "#ffffff");
+      $("#screen-svg").remove();
+      $("#screen-svg-div").append(screen_svg);
   });
+
 
 </script>
 {% endblock js %}
