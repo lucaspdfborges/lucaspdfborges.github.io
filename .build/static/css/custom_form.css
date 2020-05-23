@@ -24,3 +24,7 @@ label.label-box i {
  #rc-anchor-container {
     border: 1px solid #ffc451 !important;
 }
+
+.opacity-0{
+    opacity: 0;
+}
