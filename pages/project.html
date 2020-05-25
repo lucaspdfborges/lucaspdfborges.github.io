@@ -145,12 +145,31 @@
         <h3 class="text-left yellow-underline font-josefin my-3">Templates</h3>
       </div>
 
+      <!-- PORTOFOLIO TEMPLATES  -->
       <div class="d-flex w-100 align-items-center">
-        <span class="font-josefin text-nowrap mx-3 mb-0">ESCOLHA UM MODELO DE TEMPLATE</span>
+        <span class="font-josefin text-nowrap mx-3 mb-0">PORTFOLIO & SITES PESSOAIS</span>
         <hr class="w-25 border-top border-warning m-0">
       </div>
 
-      <div id="templates-div" class="row justify-content-center my-4"> </div>
+      <div id="portfolio-templates" class="row justify-content-center my-4"> </div>
+
+      <!-- BLOG TEMPLATES  -->
+
+      <div class="d-flex w-100 align-items-center">
+        <span class="font-josefin text-nowrap mx-3 mb-0">BLOG & DIGITAL INFLUENCE</span>
+        <hr class="w-25 border-top border-warning m-0">
+      </div>
+
+      <div id="blog-templates" class="row justify-content-center my-4"> </div>
+
+      <!-- COMERCIAL WEBSITEs TEMPLATES  -->
+
+      <div class="d-flex w-100 align-items-center">
+        <span class="font-josefin text-nowrap mx-3 mb-0">SITES COMERCIAIS</span>
+        <hr class="w-25 border-top border-warning m-0">
+      </div>
+
+      <div id="comercial-sites-templates" class="row justify-content-center my-4"> </div>
 
     </div>
   </div>
@@ -279,28 +298,21 @@
 
   // SITE TEMPLATES
 
-  site_templates.forEach(function(template, index){
-   
-    // template div
-    var template_div = `<div id="template-${index}" class="template-div col-lg-3 col-md-5 m-4"></div>`; 
-    $("#templates-div").append(template_div);
+  // comercial websites
+  loadSiteTemplates(comercial_site_templates, 'comercial-sites-templates');
 
-     // template input
-     var template_input = `<div class="form-check pl-0 pt-2"> <input class="form-check-input bg-warning opacity-0 template-input" number="${index}" type="radio" name="template"  id="template-input-${index}" value="${template}"> <label for="template-input-${index}" class="label-box text-center mb-0"> <i class='bx bx-check-double m-0 p-0'></i> </label> <label class="label-text text-center font-josefin text-secondary mb-0" for="template-input-${index}"> ${template.toUpperCase()} </label> </div>`;
+  // portfolios
+  loadSiteTemplates(portfolio_templates, 'portfolio-templates');
 
-      $(`#template-${index}`).append(template_input);
-      $(`#template-${index}`).append(`<hr id="template-hr-${index}" class="template-hr w-100 mt-1 mb-3">`);
+  // blogs
+  loadSiteTemplates(blog_templates, 'blog-templates');
 
-    // template image
-    var template_img = `<a target="_blank" rel="noopener noreferrer" href="https://bootstrapmade.com/demo/themes/${template}/"><img src="https://bootstrapmade.com/wp-content/themefiles/${template}/400.png" class="img-fluid mb-3" alt=""></a>`;
-
-    $(`#template-${index}`).append(template_img);
-  });
 
 
   // change shadow of template div to yellow
   $('.template-input').change(function(){
 
+    // clear style for all divs
     $('.template-div').each(function(){
       $(this).css('border', '1px solid white');
       $(this).css('box-shadow', 'none');
@@ -310,11 +322,12 @@
       $(this).css('border-top', '1px solid #dee2e6');
     });
 
-    if($(this).is(':checked')){
-      $(`#template-hr-${$(this).attr('number')}`).css('border-top', '1px solid #ffc451');
-       $(`#template-${$(this).attr('number')}`).css('border', '1px solid #ffc451');
-       $(`#template-${$(this).attr('number')}`).css('box-shadow', '0em .25rem 0.25rem rgba(0,0,0,.3)');
-    }
+    // give a yellow highlight to the selected
+    if($(this).is(':checked')){      
+      $(this).parents('.template-div').find('.template-hr').css('border-top', '1px solid #ffc451');
+      $(this).parents('.template-div').css('border', '1px solid #ffc451');
+      $(this).parents('.template-div').css('box-shadow', '0em .25rem 0.25rem rgba(0,0,0,.3)');
+    };
   })
 
 

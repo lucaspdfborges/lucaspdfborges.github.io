@@ -111,35 +111,117 @@ const color_palette = [
 
   // TEMPLATES 
   
-  const site_templates = 
+
+  const designers_urls = {
+    'bootstrapmade':{
+      'url': 'https://bootstrapmade.com/demo/themes/',
+      'image_url_pre':'https://bootstrapmade.com/wp-content/themefiles/',
+      'image_url_post':'/400.png'
+     },
+     'html5up':{
+      'url': 'https://html5up.net/uploads/demos/',
+      'image_url_pre':'https://html5up.net/uploads/images/',
+      'image_url_post':'.jpg'
+     },
+     'startbootstrap':{
+      'url': 'https://blackrockdigital.github.io/startbootstrap-',
+      'image_url_pre':'https://startbootstrap.com/assets/img/screenshots/themes/',
+      'image_url_post':'.png'
+     }
+    };
+
+
+    // ADMINs
+
+  const admin_templates = 
   [
-    'Ninestars',
-    'Techie',
-    'NewBiz',
-    'MyResume',
-    'KnightOne',
-    'Arsha',
-    'eNno',
-    'Dewi',
-    'Company',
-    'Butterfly',
-    'Bikin',
-    'Day',
-    'Tempo',
-    'Hidayah',
-    'Multi',
-    'Baker',
-    'Bethany',
-    'Laura',
-    'Delicious',
-    'Scaffold',
-    'Knight',
-    'Flexor',
-    'MyPortfolio',
-    'Rapid',
-    'Folio',
-    'NiceAdmin',
-    'WeBuild'
+    {'name':'NiceAdmin','designer':'bootstrapmade'},
+    {'name':'sb-admin-2','designer':'startbootstrap'},
+  ];
+
+ // BLOGs
+
+  const blog_templates = 
+  [
+    {'name':'editorial','designer':'html5up'},
+    {'name':'future-imperfect','designer':'html5up'},
+    {'name':'strongly-typed','designer':'html5up'},
+    {'name':'striped','designer':'html5up'},
+    {'name':'Tempo','designer':'bootstrapmade'},
+
+    {'name':'clean-blog','designer':'startbootstrap'},
+  ];
+
+  // PORTOFOLIOs
+  const portfolio_templates = 
+  [
+    {'name':'MyPortfolio','designer':'bootstrapmade'},
+    {'name':'Folio','designer':'bootstrapmade'},
+    {'name':'MyResume','designer':'bootstrapmade'},
+    {'name':'Laura','designer':'bootstrapmade'},
+    {'name':'multiverse','designer':'html5up'},
+    {'name':'lens','designer':'html5up'},
+    {'name':'strata','designer':'html5up'},
+    {'name':'parallelism','designer':'html5up'},
+    {'name':'astral','designer':'html5up'},
+    {'name':'stellar','designer':'html5up'},
+    {'name':'resume','designer':'startbootstrap'},
+
   ];
 
 
+  // COMERCIAL SITEs
+  const comercial_site_templates = 
+  [
+    {'name':'new-age','designer':'startbootstrap'},
+    {'name':'Ninestars','designer':'bootstrapmade'},
+    {'name':'Techie','designer':'bootstrapmade'},
+    {'name':'NewBiz','designer':'bootstrapmade'},
+    {'name':'SoftLand','designer':'bootstrapmade'},
+    {'name':'eNno','designer':'bootstrapmade'},
+    {'name':'KnightOne','designer':'bootstrapmade'},
+    {'name':'Arsha','designer':'bootstrapmade'},
+    {'name':'Dewi','designer':'bootstrapmade'},
+    {'name': 'Company','designer':'bootstrapmade'},
+    {'name':'Butterfly','designer':'bootstrapmade'},
+    {'name':'Bikin','designer':'bootstrapmade'},
+    {'name':'Day','designer':'bootstrapmade'},
+    {'name':'Hidayah','designer':'bootstrapmade'},
+    {'name':'Multi','designer':'bootstrapmade'},
+    {'name':'Baker','designer':'bootstrapmade'},
+    {'name':'Bethany','designer':'bootstrapmade'},
+    {'name':'Delicious','designer':'bootstrapmade'},
+    {'name':'Scaffold','designer':'bootstrapmade'},
+    {'name':'Knight','designer':'bootstrapmade'},
+    {'name':'Flexor','designer':'bootstrapmade'},
+    {'name':'Rapid','designer':'bootstrapmade'},
+    {'name': 'WeBuild','designer':'bootstrapmade'}
+  ];
+
+
+function loadSiteTemplates(templastes_list, div_id){
+  templastes_list.forEach(function(template, index){
+   
+    // template div
+    var template_div = `<div id="template-${div_id}-${index}" class="template-div col-lg-3 col-md-5 m-4"></div>`; 
+    $(`#${div_id}`).append(template_div);
+
+     // template input
+     var template_input = `<div class="form-check pl-0 pt-2"> <input class="form-check-input bg-warning opacity-0 template-input" number="${index}" type="radio" name="template"  id="template-${div_id}-input-${index}" value="${template.name}"> <label for="template-${div_id}-input-${index}" class="label-box text-center mb-0"> <i class='bx bx-check-double m-0 p-0'></i> </label> <label class="label-text text-center font-josefin text-secondary mb-0" for="template-${div_id}-input-${index}"> ${template.name.toUpperCase()} </label> </div>`;
+
+    $(`#template-${div_id}-${index}`).append(template_input);
+    $(`#template-${div_id}-${index}`).append('<hr class="template-hr w-100 mt-1 mb-3">');
+
+    // template url 
+    var template_url = designers_urls[template.designer].url; 
+
+    // template url 
+    var template_img_url_pre = designers_urls[template.designer].image_url_pre; 
+    var template_img_url_post = designers_urls[template.designer].image_url_post;     
+
+    // template image
+    var template_img = `<a target="_blank" rel="noopener noreferrer" href="${template_url}${template.name}"/><div style="height:200px; background: url('${template_img_url_pre}${template.name}${template_img_url_post}'); background-size: cover; background-position: right 63% bottom 100%;" class="img-fluid mb-3" alt=""></div></a>`;
+
+    $(`#template-${div_id}-${index}`).append(template_img);
+  });
+}
