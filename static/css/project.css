@@ -23,7 +23,7 @@
 
 
 #color-palettes{
-    max-height: 12em;
+    max-height: 20em;
     overflow:auto;
 }
 
@@ -55,6 +55,10 @@
     box-shadow: 0em .1rem 0.1rem rgba(0,0,0,.5)!important;
 }
 
+.font-div:nth-child(n+14) {
+    display: none;
+}
+
 .template-div {
 
     border: 1px solid white;
@@ -82,14 +86,17 @@
     opacity: 0;
     width: 0;
     height: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .input-color + label{
-    height: 2em;
-    width: 2em;
+    height: 16em;
     border-radius: 2px;
     box-shadow: 0 .5rem 0.5rem rgba(0,0,0,.15)!important;
-    margin-bottom: 0px;
+    margin: 0px;
+    padding:0;
+
 
     -webkit-transition: all 300ms ease-out;
     -moz-transition: all 300ms ease-out;
@@ -98,7 +105,9 @@
 }
 
 .input-color + label:hover{
-    box-shadow: 0em .25rem 0.25rem rgba(0,0,0,.3)!important;
+    box-shadow: 0em .25rem 0.25rem rgba(0,0,0,.4)!important;
+    transform: translate(0px, -3px);
+
 }
 
 .input-color + label:active{
@@ -106,7 +115,7 @@
 }
 
 
-.font-div{
+.font-div-label{
     box-shadow: 0 .25rem .25rem rgba(0,0,0,.075)!important;
 
     -webkit-transition: all 300ms ease-out;
@@ -122,11 +131,11 @@ label.font-family  small {
     transition: all 300ms ease-out;
 }
 
-.font-div:hover{
+.font-div-label:hover{
     box-shadow: 0 .125rem .2rem rgba(0,0,0,.2)!important;
 }
 
-.font-div:active{
+.font-div-label:active{
     box-shadow: 0 .1rem .1rem rgba(0,0,0,.075)!important;
     background-color: #ffc451;
 }

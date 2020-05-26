@@ -91,65 +91,69 @@
 
 <section id="palette">
   <div class="container">
-    <div class="row align-items-center justify-content-between">
-      <div class="col-lg-12 mb-4">
+    <div class="row align-items-start justify-content-between">
+      <div class="col-lg-12 mb-5">
         <h3 class="text-left yellow-underline font-josefin my-3">Paleta de Cores</h3>
       </div>
 
       <div class="col-lg-4">
-        <h5 class="font-josefin text-secondary w-100 text-center mb-0" id="color-palette-name">freedom colors</h5>
-        <div class="d-flex rounded my-3">
-          <div id="color-1" class="palette-color rounded-left" ></div>
-          <div id="color-2" class="palette-color" ></div>
-          <div id="color-3" class="palette-color" ></div>
-          <div id="color-4" class="palette-color rounded-right" ></div>
+        <div class="d-flex justify-content-between mb-5">
+          <h4 class="font-josefin mb-0">Paleta selecionada:</h4>
+          <span class="font-jura text-secondary text-center mb-0" id="color-palette-name">freedom colors</span>
         </div>
+
+        <div class="d-flex align-items-center my-3">
+          <!-- color #1 -->
+          <div class="d-flex flex-column w-25">
+            <input class="input-color" type="color" id="custom-color-1" name="color-1">
+            <label for="custom-color-1"></label>
+          </div>
+
+          <!-- color #2 -->
+          <div class="d-flex flex-column w-25">
+            <input class="input-color" type="color" id="custom-color-2" name="color-2">
+            <label for="custom-color-2"> </label>
+          </div>
+
+          <!-- color #3 -->
+          <div class="d-flex flex-column w-25">
+            <input class="input-color" type="color" id="custom-color-3" name="color-3">
+            <label for="custom-color-3"></label>
+          </div>
+
+          <!-- color #4 -->
+          <div class="d-flex flex-column w-25">
+            <input class="input-color" type="color" id="custom-color-4" name="color-4">
+            <label for="custom-color-4"></label>
+          </div>
+
+
+          <!-- sugestoes -->
+
       </div>
 
-      <div class="col-lg-1 h-100">
-        <hr style="width:1px; height: 22em;" class="border-left">
+      <div class="d-flex flex-column align-items-center">
+        <span class="font-jura text-secondary mb-0"> <small> Clique nos retângulos para alterar a cor </small> </span> 
+      </div>
+
       </div>
 
       <div class="col-lg-7">
         <div class="d-flex justify-content-between">
-          <h5 class="font-josefin">Paletas pré-definidas:</h5> 
+          <h4 class="font-josefin">Paletas pré-definidas:</h4>
           <span class="font-jura text-secondary mx-4"><small>clique nas paletas abaixo para escolher as cores</small></span>
         </div>
         <div id="color-palettes" class="d-flex flex-wrap p-3"></div>
-        <div class="d-flex justify-content-center align-items-center mt-4 mb-3">
-          <hr class="w-100 border-top"> 
-        </div>
-
-        <div class="d-flex align-items-center">
-          <h5 class="font-josefin mb-0">Customizar paleta:</h5>
-
-            <!-- color #1 -->
-            <input class="input-color" type="color" id="custom-color-1" name="color-1">
-            <label for="custom-color-1"></label>
-
-            <!-- color #2 -->
-            <input class="input-color" type="color" id="custom-color-2" name="color-2">
-            <label for="custom-color-2"></label>
-
-            <!-- color #3 -->
-            <input class="input-color" type="color" id="custom-color-3" name="color-3">
-            <label for="custom-color-3"></label>
-
-            <!-- color #4 -->
-            <input class="input-color" type="color" id="custom-color-4" name="color-4">
-            <label for="custom-color-4"></label>
-
-            <!-- sugestoes -->
-
-          <div class="ml-5" style="line-height: 1;">
-            <span class="font-jura text-secondary mb-0"> <small> Clique nos quadrados para alterar a cor </small> </span> <br>
-            <span class="font-jura text-secondary mb-0"> <small> Acesse <a target="_blank" rel="noopener noreferrer" href="https://colorhunt.co/">Color Hunt</a> para se inspirar</small> </span>
-          </div>
-
-        </div>
       </div>
+
     </div>
+
+    <!-- more palettes -->
+    <div class="d-flex justify-content-end w-100 align-items-center mt-5">
+      <span class="font-josefin text-secondary text-nowrap mx-3">QUER MAIS PALETAS ? <a target="_blank" rel="noopener noreferrer" href="https://colorhunt.co/">COLOR HUNT</a></span>
     </div>
+
+  </div>
 </section>
 
 <section id="colors-use">
@@ -160,12 +164,15 @@
       </div>
 
       <div class="col-lg-6" id="screen-svg-div"> </div>
+      
 
       <div class="col-lg-4">
+
+        <h4 class="font-josefin">Composição de cores</h4>
         <!-- tema claro -->
         <div class="form-check">
           <input class="dark-or-light form-check-input bg-warning opacity-0" type="radio" name="dark-or-light" oninvalid="this.setCustomValidity('Selecione uma opção')" oninput="setCustomValidity('')"  id="light-theme" value="light" checked>
-          <label for="light-theme" class="label-box text-center rounded">
+          <label for="light-theme" class="label-box text-center rounded-0">
               <i class='bx bx-check-double m-0 p-0'></i>
           </label>
           <label class="label-text text-center font-jura" for="light-theme">
@@ -176,7 +183,7 @@
         <!-- tema escuro  -->
         <div class="form-check">
           <input class="dark-or-light form-check-input bg-warning opacity-0" type="radio" name="dark-or-light" oninvalid="this.setCustomValidity('Selecione uma opção')" oninput="setCustomValidity('')"  id="dark-theme" value="light" required>
-          <label for="dark-theme" class="label-box text-center rounded">
+          <label for="dark-theme" class="label-box text-center rounded-0">
               <i class='bx bx-check-double m-0 p-0'></i>
           </label>
           <label class="label-text text-center font-jura" for="dark-theme">
@@ -184,12 +191,13 @@
           </label>
         </div>
 
-        <hr class="w-100 border-top">
+        <h4 class="font-josefin mt-4">Cor auxiliar</h4>
+
 
         <!-- branco  -->
         <div class="form-check">
           <input class="dark-or-light form-check-input bg-warning opacity-0" type="checkbox" name="whited" oninvalid="this.setCustomValidity('Selecione uma opção')" oninput="setCustomValidity('')"  id="whited" value="whited" checked>
-          <label for="whited" class="label-box text-center rounded">
+          <label for="whited" class="label-box text-center rounded-0">
               <i class='bx bx-check-double m-0 p-0'></i>
           </label>
           <label class="label-text text-center font-jura" for="whited">
@@ -230,7 +238,7 @@
         <hr class="w-25 border-top border-warning m-0">
       </div>
 
-      <div id="blog-templates" class="row justify-content-center my-4"> </div>
+      <div id="blog-templates" class="row justify-content-center my-4 pb-5"> </div>
 
       
       <!-- COMERCIAL WEBSITEs TEMPLATES  -->
@@ -250,7 +258,6 @@
 
        <!-- more websites  -->
        <div class="d-flex justify-content-end w-100 align-items-center">
-        <hr class="w-25 border-top border-warning m-0">
         <span class="font-josefin text-secondary text-nowrap mx-3">QUER MAIS TEMPLATES ? <a target="_blank" rel="noopener noreferrer" href="https://bootstrapmade.com/">BOOTSTRAPMADE</a>, <a target="_blank" rel="noopener noreferrer" href="https://html5up.net/">HTML5UP</a> & <a target="_blank" rel="noopener noreferrer" href="https://startbootstrap.com/themes/">STARTBOOTSTRAP</a></span>
       </div>
 
@@ -272,9 +279,15 @@
 
       <div id="font-family-div" class="d-flex flex-wrap my-5"> </div>
 
+      <!-- show more [+]  -->
+      <div class="d-flex justify-content-end w-100 mb-5 mr-5">
+        <input type="checkbox" templateDiv="font-family-div" id="font-family-input" class="font-div-input opacity-0">
+        <label class="font-josefin" for="font-family-input"><i class='bx bx-plus btn btn-warning p-2 rounded-0'></i></button>
+      </div>
+
+       <!-- more fonts -->
       <div class="d-flex justify-content-end w-100 align-items-center">
-        <hr class="w-25 border-top border-warning m-0">
-        <span class="font-josefin text-secondary text-nowrap mx-3">QUER MAIS FONTES ? PROCURE EM <a target="_blank" rel="noopener noreferrer" href="https://fonts.google.com/">GOOGLE FONTS</a></span>
+        <span class="font-josefin text-secondary text-nowrap mx-3">QUER MAIS FONTES ? <a target="_blank" rel="noopener noreferrer" href="https://fonts.google.com/">GOOGLE FONTS</a></span>
       </div>
 
     </div>
@@ -283,7 +296,7 @@
 
 
   <!-- Price  div  -->
-  <div class="total-cost bg-warning rounded shadow-sm p-2">
+  <!-- <div class="total-cost bg-warning rounded shadow-sm p-2">
     <h4 class="font-courier text-center m-0">Total</h4>
     <div class="d-flex align-items-center">
       <hr class="w-100 my-1">
@@ -291,7 +304,7 @@
       <hr class="w-100 my-1">
     </div>
     <p class="font-josefin text-center m-0"> R$ 100</p>
-  </div>
+  </div> -->
 
   
 
@@ -445,7 +458,7 @@
       $(`#${$(this).attr('name')}`).css('background-color',$(this).val());
       $(`#${$(this).attr('id') } + label`).css("background-color",$(this).val());      
       $(this).attr("value", $(this).val()); 
-      $("#color-palette-name").html('palete customizado');
+      $("#color-palette-name").html('customizado');
 
       updateColorUse();
   });
@@ -467,12 +480,12 @@
   font_family_collection.forEach(function(font, index){
 
     // font name input and label-div
-    var font_div= `<div id="font-div-${index}"></div>`;
+    var font_div= `<div class="font-div" id="font-div-${index}"></div>`;
     $("#font-family-div").append(font_div);
 
     var font_input = `<input class="form-check-input bg-warning opacity-0" type="checkbox" name="font-family" id="font-family-${index}" value="${font.name}">`;
     
-    var font_label = `<label for="font-family-${index}" class="font-family font-div rounded px-3 m-2" id="font-family-label-${index}"></label>`;
+    var font_label = `<label for="font-family-${index}" class="font-family font-div-label rounded px-3 m-2" id="font-family-label-${index}"></label>`;
 
     $(`#font-div-${index}`).append(font_input);
     $(`#font-div-${index}`).append(font_label);
@@ -526,10 +539,7 @@
 
     // Show template divs
     var template_div = $(this).attr('templateDiv');
-    console.log(template_div);
-
     var label = $("label[for='" + $(this).attr('id') + "']");
-
     
     if($(this).is(':checked')){
 
@@ -566,9 +576,53 @@
       }, 500);
 
     }
-
-
   });
+
+
+  // SEE FONTS AGAIN 
+
+  $(".font-div-input").change(function(){
+
+    // Show template divs
+    var template_div = $(this).attr('templateDiv');
+    var label = $("label[for='" + $(this).attr('id') + "']");
+
+    if($(this).is(':checked')){
+
+      // Change label
+      $(label).find('i').removeClass('btn-warning');
+      $(label).find('i').removeClass('bx-plus');
+      $(label).find('i').addClass('btn-dark');
+      $(label).find('i').addClass('bx-minus');
+
+      // show divs
+      $(`#${template_div}`).find('.font-div').each(function(index){        
+        $(this).fadeIn(500);
+      });
+
+    } else {
+
+      // Change label
+      $(label).find('i').removeClass('btn-dark');
+      $(label).find('i').removeClass('bx-minus');
+      $(label).find('i').addClass('btn-warning');
+      $(label).find('i').addClass('bx-plus');
+
+
+      // show divs
+      $(`#${template_div}`).find('.font-div').each(function(index){
+        if(index>12){
+          $(this).fadeOut(500);
+        }
+      });
+
+      // Scroll back to top
+      $('html, body').animate({
+          scrollTop: $(`#${template_div}`).offset().top - 120
+      }, 500);
+
+    }
+});
 
 </script>
 
