@@ -218,6 +218,11 @@
 
       <div id="portfolio-templates" class="row justify-content-center my-4"> </div>
 
+      <div class="d-flex justify-content-end w-100 mb-5 mr-5">
+        <input type="checkbox" templateDiv="portfolio-templates" id="portfolio-input" class="template-div-input opacity-0">
+        <label class="font-josefin" for="portfolio-input"><i class='bx bx-plus btn btn-warning p-2 rounded-0'></i></button>
+      </div>
+
       <!-- BLOG TEMPLATES  -->
 
       <div class="d-flex w-100 align-items-center">
@@ -227,6 +232,7 @@
 
       <div id="blog-templates" class="row justify-content-center my-4"> </div>
 
+      
       <!-- COMERCIAL WEBSITEs TEMPLATES  -->
 
       <div class="d-flex w-100 align-items-center">
@@ -235,6 +241,18 @@
       </div>
 
       <div id="comercial-sites-templates" class="row justify-content-center my-4"> </div>
+
+      <div class="d-flex justify-content-end w-100 mb-5 mr-5">
+        <input type="checkbox" templateDiv="comercial-sites-templates" id="comercial-sites-input" class="template-div-input opacity-0">
+        <label class="font-josefin" for="comercial-sites-input"><i class='bx bx-plus btn btn-warning p-2 rounded-0'></i></button>
+      </div>
+
+
+       <!-- more websites  -->
+       <div class="d-flex justify-content-end w-100 align-items-center">
+        <hr class="w-25 border-top border-warning m-0">
+        <span class="font-josefin text-secondary text-nowrap mx-3">QUER MAIS TEMPLATES ? <a target="_blank" rel="noopener noreferrer" href="https://bootstrapmade.com/">BOOTSTRAPMADE</a>, <a target="_blank" rel="noopener noreferrer" href="https://html5up.net/">HTML5UP</a> & <a target="_blank" rel="noopener noreferrer" href="https://startbootstrap.com/themes/">STARTBOOTSTRAP</a></span>
+      </div>
 
     </div>
   </div>
@@ -480,7 +498,6 @@
   loadSiteTemplates(blog_templates, 'blog-templates');
 
 
-
   // change shadow of template div to yellow
   $('.template-input').change(function(){
 
@@ -500,8 +517,58 @@
       $(this).parents('.template-div').css('border', '1px solid #ffc451');
       $(this).parents('.template-div').css('box-shadow', '0em .25rem 0.25rem rgba(0,0,0,.3)');
     };
-  })
+  });
 
+
+  // SEE TEMPLATES AGAIN 
+
+  $(".template-div-input").change(function(){
+
+    // Show template divs
+    var template_div = $(this).attr('templateDiv');
+    console.log(template_div);
+
+    var label = $("label[for='" + $(this).attr('id') + "']");
+
+    
+    if($(this).is(':checked')){
+
+      // Change label
+      $(label).find('i').removeClass('btn-warning');
+      $(label).find('i').removeClass('bx-plus');
+      $(label).find('i').addClass('btn-dark');
+      $(label).find('i').addClass('bx-minus');
+
+      // show divs
+      $(`#${template_div}`).find('.template-div').each(function(index){        
+        $(this).fadeIn(500);
+      });
+
+    } else {
+
+      // Change label
+      $(label).find('i').removeClass('btn-dark');
+      $(label).find('i').removeClass('bx-minus');
+      $(label).find('i').addClass('btn-warning');
+      $(label).find('i').addClass('bx-plus');
+
+
+      // show divs
+      $(`#${template_div}`).find('.template-div').each(function(index){
+        if(index>5){
+          $(this).fadeOut(500);
+        }
+      });
+
+      // Scroll back to top
+      $('html, body').animate({
+          scrollTop: $(`#${template_div}`).offset().top - 100
+      }, 500);
+
+    }
+
+
+  });
 
 </script>
 
