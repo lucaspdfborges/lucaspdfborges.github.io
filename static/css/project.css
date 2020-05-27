@@ -10,9 +10,8 @@
 }
 
 .palette-color{ 
-  height: 18.5em;
+  height: 10em;
   width: 100%;
-  box-shadow: 0 .5rem 0.5rem rgba(0,0,0,.15)!important;
   z-index: 2;
 
   -webkit-transition: box-shadow 300ms, background-color 500ms ease-out;
